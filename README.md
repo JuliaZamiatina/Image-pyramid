@@ -1,1 +1,1 @@
-# Umage-pyramid
+# Image-pyramid
