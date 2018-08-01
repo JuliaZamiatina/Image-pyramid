@@ -24,10 +24,12 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        imagepyramidui.cpp
+        imagepyramidui.cpp \
+    pyramid.cpp
 
 HEADERS += \
-        imagepyramidui.h
+        imagepyramidui.h \
+    pyramid.h
 
 FORMS += \
         imagepyramidui.ui

@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/res">
-        <file>img/heart_PNG696.png</file>
         <file>img/обоиHorizon.png</file>
         <file>img/обоиRE7.jpg</file>
         <file>img/обоиTheRoom.jpg</file>

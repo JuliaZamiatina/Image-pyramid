@@ -69,11 +69,11 @@ public:
         label_2->setFont(font);
         label_3 = new QLabel(centralWidget);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(295, 10, 29, 16));
+        label_3->setGeometry(QRect(270, 10, 29, 16));
         label_3->setFont(font);
         sizeLabel = new QLabel(centralWidget);
         sizeLabel->setObjectName(QStringLiteral("sizeLabel"));
-        sizeLabel->setGeometry(QRect(330, 10, 16, 16));
+        sizeLabel->setGeometry(QRect(300, 10, 71, 16));
         sizeLabel->setFont(font);
         image = new QScrollArea(centralWidget);
         image->setObjectName(QStringLiteral("image"));
