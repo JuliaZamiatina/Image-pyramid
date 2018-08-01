@@ -18,3 +18,25 @@ Pyramid::Pyramid(QPixmap image, QObject *parent) : QObject(parent)
         stackOfImages.push(image);
     }
 }
+
+QPixmap Pyramid::ShowLayer(int layer)
+{
+    QPixmap mainImg =  stackOfImages.at(0);
+    QPixmap returnImg = stackOfImages.at(layer);
+    returnImg = returnImg.scaled(mainImg.width(),mainImg.height(),Qt::KeepAspectRatioByExpanding,Qt::SmoothTransformation);
+    return returnImg;
+}
+int Pyramid::GetLayerWidht(int layer)
+{
+    return stackOfImages.at(layer).width();
+}
+
+int Pyramid::GetLayerHeight(int layer)
+{
+    return stackOfImages.at(layer).height();
+}
+
+int Pyramid::GetPyramidSize()
+{
+    return stackOfImages.size()-1;
+}

@@ -18,6 +18,8 @@ public:
 private slots:
     void on_fileName_currentTextChanged(const QString &arg1);
 
+    void on_layerNumb_currentIndexChanged(int index);
+
 private:
     Ui::ImagePyramidUI *ui;
 };
