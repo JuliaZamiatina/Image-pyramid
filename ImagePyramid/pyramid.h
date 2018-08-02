@@ -11,8 +11,10 @@ public:
     explicit Pyramid(QPixmap, QObject *parent = nullptr);
     QPixmap ShowLayer(int);
     int GetPyramidSize();
-    int Pyramid::GetLayerWidht(int);
-    int Pyramid::GetLayerHeight(int);
+    int GetLayerWidht(int);
+    int GetLayerHeight(int);
+    int GetMaxPyramidSize();
+    void PushLayers(int);
 
 private:
     QStack<QPixmap> stackOfImages;

@@ -28,6 +28,7 @@ class Ui_ImagePyramidUI
 {
 public:
     QAction *action;
+    QAction *action_3;
     QWidget *centralWidget;
     QLabel *label;
     QComboBox *fileName;
@@ -50,6 +51,8 @@ public:
         ImagePyramidUI->resize(379, 378);
         action = new QAction(ImagePyramidUI);
         action->setObjectName(QStringLiteral("action"));
+        action_3 = new QAction(ImagePyramidUI);
+        action_3->setObjectName(QStringLiteral("action_3"));
         centralWidget = new QWidget(ImagePyramidUI);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         label = new QLabel(centralWidget);
@@ -103,6 +106,8 @@ public:
 
         menuBar->addAction(menuFile->menuAction());
         menuFile->addAction(action);
+        menuFile->addSeparator();
+        menuFile->addAction(action_3);
 
         retranslateUi(ImagePyramidUI);
 
@@ -113,6 +118,7 @@ public:
     {
         ImagePyramidUI->setWindowTitle(QApplication::translate("ImagePyramidUI", "ImagePyramidUI", nullptr));
         action->setText(QApplication::translate("ImagePyramidUI", "\320\236\321\202\320\272\321\200\321\213\321\202\321\214 \320\270\320\267\320\276\320\261\321\200\320\260\320\266\320\265\320\275\320\270\320\265", nullptr));
+        action_3->setText(QApplication::translate("ImagePyramidUI", "\320\223\320\265\320\275\320\265\321\200\320\270\321\200\320\276\320\262\320\260\321\202\321\214 \321\201\320\273\320\276\320\270", nullptr));
         label->setText(QApplication::translate("ImagePyramidUI", "File:", nullptr));
         label_2->setText(QApplication::translate("ImagePyramidUI", "Layer:", nullptr));
         label_3->setText(QApplication::translate("ImagePyramidUI", "Size:", nullptr));

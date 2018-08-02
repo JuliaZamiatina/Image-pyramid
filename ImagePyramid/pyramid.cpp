@@ -5,18 +5,26 @@
 Pyramid::Pyramid(QPixmap image, QObject *parent) : QObject(parent)
 {
     stackOfImages.push(image);
+}
 
-    double counter = (qLn(image.width())/qLn(2));
-    double counterHight = (qLn(image.height())/qLn(2));
-    if (counterHight<counter)
-        counter = counterHight;
-    counter = qFloor(counter);
-
-    for (int i = 0; i<counter; i++)
+void Pyramid::PushLayers(int numberOfLayers)
+{
+    QPixmap image = stackOfImages.at(stackOfImages.size()-1);
+    for (int i = 0; i<numberOfLayers; i++)
     {
         image = image.scaled(image.width()/2,image.height()/2,Qt::IgnoreAspectRatio);
         stackOfImages.push(image);
     }
+}
+
+int Pyramid::GetMaxPyramidSize()
+{
+    double counter = (qLn(stackOfImages.at(0).width())/qLn(2));
+    double counterHight = (qLn(stackOfImages.at(0).height())/qLn(2));
+    if (counterHight<counter)
+        counter = counterHight;
+    counter = qFloor(counter);
+    return qFloor(counter);
 }
 
 QPixmap Pyramid::ShowLayer(int layer)

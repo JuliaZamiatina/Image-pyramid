@@ -14,7 +14,8 @@ class ImagePyramidUI : public QMainWindow
 
 public:
     explicit ImagePyramidUI(QWidget *parent = nullptr);
-    ~ImagePyramidUI();
+    ~ImagePyramidUI();    
+    void AddLayers(int);
 
 private slots:
 
@@ -23,6 +24,8 @@ private slots:
     void on_action_triggered();
 
     void on_fileName_currentIndexChanged(int index);
+
+    void on_action_3_triggered();
 
 private:
     Ui::ImagePyramidUI *ui;    

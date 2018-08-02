@@ -1,5 +1,6 @@
 #include "imagepyramidui.h"
 #include "ui_imagepyramidui.h"
+#include "layersgeneration.h"
 
 #include "pyramid.h"
 #include "qmath.h"
@@ -10,8 +11,6 @@
 #include <QScrollArea>
 #include <QTextStream>
 #include <QFileDialog>
-
-#define PATH ":/res/img/"
 
 ImagePyramidUI::ImagePyramidUI(QWidget *parent) :
     QMainWindow(parent),
@@ -107,10 +106,22 @@ void ImagePyramidUI::addPictureOnForm(QPixmap mainImage)
 
     ui->layerNumb->clear();
     ui->layerNumb->setCurrentIndex(0);
-
-
-    for (int i = 0; i<pictureP->GetPyramidSize();i++)
+    ui->layerNumb->addItem(QString::number(0));
+}
+void ImagePyramidUI::AddLayers(int number)
+{
+    pictureP->PushLayers(number);
+    for (int i = ui->layerNumb->count(); i<=pictureP->GetPyramidSize();i++)
     {
         ui->layerNumb->addItem(QString::number(i));
     }
+}
+
+void ImagePyramidUI::on_action_3_triggered()
+{
+    if (ui->lable_image->pixmap()->isNull())
+        return;
+    LayersGeneration *window = new LayersGeneration(pictureP->GetMaxPyramidSize()-pictureP->GetPyramidSize(),this);
+    window->setModal(true);
+    window->exec();
 }
