@@ -27,6 +27,10 @@ private slots:
 
     void on_action_3_triggered();
 
+    void on_doubleSpinBox_valueChanged(const QString &arg1);
+
+    void on_pushButton_clicked();
+
 private:
     Ui::ImagePyramidUI *ui;    
     void addPictureOnForm(QPixmap);

@@ -13,10 +13,12 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QDoubleSpinBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
@@ -39,6 +41,9 @@ public:
     QScrollArea *image;
     QWidget *scrollAreaWidgetContents;
     QLabel *lable_image;
+    QLabel *label_4;
+    QDoubleSpinBox *doubleSpinBox;
+    QPushButton *pushButton;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QToolBar *mainToolBar;
@@ -48,7 +53,8 @@ public:
     {
         if (ImagePyramidUI->objectName().isEmpty())
             ImagePyramidUI->setObjectName(QStringLiteral("ImagePyramidUI"));
-        ImagePyramidUI->resize(379, 378);
+        ImagePyramidUI->setEnabled(true);
+        ImagePyramidUI->resize(523, 422);
         action = new QAction(ImagePyramidUI);
         action->setObjectName(QStringLiteral("action"));
         action_3 = new QAction(ImagePyramidUI);
@@ -81,19 +87,34 @@ public:
         sizeLabel->setFont(font);
         image = new QScrollArea(centralWidget);
         image->setObjectName(QStringLiteral("image"));
-        image->setGeometry(QRect(50, 50, 291, 251));
+        image->setGeometry(QRect(10, 40, 501, 281));
         image->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 289, 249));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 499, 279));
         lable_image = new QLabel(scrollAreaWidgetContents);
         lable_image->setObjectName(QStringLiteral("lable_image"));
         lable_image->setGeometry(QRect(120, 100, 47, 13));
         image->setWidget(scrollAreaWidgetContents);
+        label_4 = new QLabel(centralWidget);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(380, 8, 101, 20));
+        label_4->setFont(font);
+        doubleSpinBox = new QDoubleSpinBox(centralWidget);
+        doubleSpinBox->setObjectName(QStringLiteral("doubleSpinBox"));
+        doubleSpinBox->setGeometry(QRect(480, 8, 41, 22));
+        doubleSpinBox->setDecimals(1);
+        doubleSpinBox->setMinimum(1.1);
+        doubleSpinBox->setMaximum(3);
+        doubleSpinBox->setSingleStep(0.1);
+        doubleSpinBox->setValue(2);
+        pushButton = new QPushButton(centralWidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(200, 330, 111, 23));
         ImagePyramidUI->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(ImagePyramidUI);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 379, 21));
+        menuBar->setGeometry(QRect(0, 0, 523, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
         ImagePyramidUI->setMenuBar(menuBar);
@@ -102,6 +123,7 @@ public:
         ImagePyramidUI->addToolBar(Qt::TopToolBarArea, mainToolBar);
         statusBar = new QStatusBar(ImagePyramidUI);
         statusBar->setObjectName(QStringLiteral("statusBar"));
+        statusBar->setEnabled(false);
         ImagePyramidUI->setStatusBar(statusBar);
 
         menuBar->addAction(menuFile->menuAction());
@@ -124,6 +146,8 @@ public:
         label_3->setText(QApplication::translate("ImagePyramidUI", "Size:", nullptr));
         sizeLabel->setText(QApplication::translate("ImagePyramidUI", "?", nullptr));
         lable_image->setText(QString());
+        label_4->setText(QApplication::translate("ImagePyramidUI", "Layer coefficient:", nullptr));
+        pushButton->setText(QApplication::translate("ImagePyramidUI", "\320\236\321\207\320\270\321\201\321\202\320\270\321\202\321\214 \320\277\320\270\321\200\320\260\320\274\320\270\320\264\321\203", nullptr));
         menuFile->setTitle(QApplication::translate("ImagePyramidUI", "File", nullptr));
     } // retranslateUi
 

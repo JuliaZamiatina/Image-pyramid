@@ -11,6 +11,7 @@
 #include <QScrollArea>
 #include <QTextStream>
 #include <QFileDialog>
+#include <QMessageBox>
 
 ImagePyramidUI::ImagePyramidUI(QWidget *parent) :
     QMainWindow(parent),
@@ -110,7 +111,7 @@ void ImagePyramidUI::addPictureOnForm(QPixmap mainImage)
 }
 void ImagePyramidUI::AddLayers(int number)
 {
-    pictureP->PushLayers(number);
+    pictureP->PushLayers(number, ui->doubleSpinBox->value());
     for (int i = ui->layerNumb->count(); i<=pictureP->GetPyramidSize();i++)
     {
         ui->layerNumb->addItem(QString::number(i));
@@ -119,9 +120,33 @@ void ImagePyramidUI::AddLayers(int number)
 
 void ImagePyramidUI::on_action_3_triggered()
 {
-    if (ui->lable_image->pixmap()->isNull())
+    if (ui->fileName->count()==0)
         return;
-    LayersGeneration *window = new LayersGeneration(pictureP->GetMaxPyramidSize()-pictureP->GetPyramidSize(),this);
+    LayersGeneration *window = new LayersGeneration(pictureP->GetMaxPyramidSize(ui->doubleSpinBox->value())-pictureP->GetPyramidSize(),this);
     window->setModal(true);
     window->exec();
+}
+
+void ImagePyramidUI::on_doubleSpinBox_valueChanged(const QString &arg1)
+{
+    if (ui->fileName->count()==0)
+        return;
+    if ((pictureP->GetPyramidSize()>0)&&(ui->doubleSpinBox->value()!=pictureP->coef))
+    {
+        QMessageBox messageBox;
+        messageBox.critical(nullptr,"Ошибка","Невозможно изменить коэфициент при добавлении слоев!");
+        ui->doubleSpinBox->setValue(pictureP->coef);
+    }
+}
+
+void ImagePyramidUI::on_pushButton_clicked()
+{
+    if (ui->fileName->count()==0)
+        return;
+    pictureP = new Pyramid(pictureP->ShowLayer(0));
+    ui->layerNumb->clear();
+    ui->layerNumb->setCurrentIndex(0);
+    ui->layerNumb->addItem(QString::number(0));
+    QMessageBox messageBox;
+    messageBox.information(nullptr,"Готово","Пирамида очищена!");
 }

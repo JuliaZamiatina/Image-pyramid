@@ -2,12 +2,15 @@
 <ui version="4.0">
  <class>ImagePyramidUI</class>
  <widget class="QMainWindow" name="ImagePyramidUI">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>379</width>
-    <height>378</height>
+    <width>523</width>
+    <height>422</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -109,10 +112,10 @@
    <widget class="QScrollArea" name="image">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>50</y>
-      <width>291</width>
-      <height>251</height>
+      <x>10</x>
+      <y>40</y>
+      <width>501</width>
+      <height>281</height>
      </rect>
     </property>
     <property name="widgetResizable">
@@ -123,8 +126,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>289</width>
-       <height>249</height>
+       <width>499</width>
+       <height>279</height>
       </rect>
      </property>
      <widget class="QLabel" name="lable_image">
@@ -142,13 +145,69 @@
      </widget>
     </widget>
    </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>8</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Layer coefficient:</string>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="doubleSpinBox">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>8</y>
+      <width>41</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="decimals">
+     <number>1</number>
+    </property>
+    <property name="minimum">
+     <double>1.100000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>3.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>0.100000000000000</double>
+    </property>
+    <property name="value">
+     <double>2.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>330</y>
+      <width>111</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Очистить пирамиду</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>379</width>
+     <width>523</width>
      <height>21</height>
     </rect>
    </property>
@@ -170,7 +229,11 @@
     <bool>false</bool>
    </attribute>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+  </widget>
   <action name="action">
    <property name="text">
     <string>Открыть изображение</string>

@@ -13,8 +13,9 @@ public:
     int GetPyramidSize();
     int GetLayerWidht(int);
     int GetLayerHeight(int);
-    int GetMaxPyramidSize();
-    void PushLayers(int);
+    int GetMaxPyramidSize(double);
+    void PushLayers(int, double);
+    double coef = 2;
 
 private:
     QStack<QPixmap> stackOfImages;
