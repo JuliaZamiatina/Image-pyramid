@@ -290,6 +290,10 @@ debug\moc_imagepyramidui.cpp: C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\QMainWi
 		C:\Qt\5.11.1\msvc2017_64\include\QtGui\qtouchdevice.h \
 		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\qtabwidget.h \
 		C:\Qt\5.11.1\msvc2017_64\include\QtGui\qicon.h \
+		..\ImagePyramid\pyramid.h \
+		C:\Qt\5.11.1\msvc2017_64\include\QtCore\QObject \
+		C:\Qt\5.11.1\msvc2017_64\include\QtCore\QStack \
+		C:\Qt\5.11.1\msvc2017_64\include\QtCore\qstack.h \
 		..\ImagePyramid\imagepyramidui.h \
 		debug\moc_predefs.h \
 		C:\Qt\5.11.1\msvc2017_64\bin\moc.exe
@@ -484,6 +488,10 @@ debug\main.obj: ..\ImagePyramid\main.cpp ../ImagePyramid/imagepyramidui.h \
 		C:\Qt\5.11.1\msvc2017_64\include\QtGui\qtouchdevice.h \
 		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\qtabwidget.h \
 		C:\Qt\5.11.1\msvc2017_64\include\QtGui\qicon.h \
+		../ImagePyramid/pyramid.h \
+		C:\Qt\5.11.1\msvc2017_64\include\QtCore\QObject \
+		C:\Qt\5.11.1\msvc2017_64\include\QtCore\QStack \
+		C:\Qt\5.11.1\msvc2017_64\include\QtCore\qstack.h \
 		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\QApplication \
 		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\qapplication.h \
 		C:\Qt\5.11.1\msvc2017_64\include\QtCore\qcoreapplication.h \
@@ -599,8 +607,15 @@ debug\imagepyramidui.obj: ..\ImagePyramid\imagepyramidui.cpp ../ImagePyramid/ima
 		C:\Qt\5.11.1\msvc2017_64\include\QtGui\qtouchdevice.h \
 		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\qtabwidget.h \
 		C:\Qt\5.11.1\msvc2017_64\include\QtGui\qicon.h \
+		../ImagePyramid/pyramid.h \
+		C:\Qt\5.11.1\msvc2017_64\include\QtCore\QObject \
+		C:\Qt\5.11.1\msvc2017_64\include\QtCore\QStack \
+		C:\Qt\5.11.1\msvc2017_64\include\QtCore\qstack.h \
 		ui_imagepyramidui.h \
 		C:\Qt\5.11.1\msvc2017_64\include\QtCore\QVariant \
+		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\QAction \
+		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\qaction.h \
+		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\qactiongroup.h \
 		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\QApplication \
 		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\qapplication.h \
 		C:\Qt\5.11.1\msvc2017_64\include\QtCore\qcoreapplication.h \
@@ -624,11 +639,10 @@ debug\imagepyramidui.obj: ..\ImagePyramid\imagepyramidui.cpp ../ImagePyramid/ima
 		C:\Qt\5.11.1\msvc2017_64\include\QtCore\qabstractitemmodel.h \
 		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\QLabel \
 		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\qlabel.h \
+		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\QMenu \
+		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\qmenu.h \
 		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\QMenuBar \
 		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\qmenubar.h \
-		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\qmenu.h \
-		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\qaction.h \
-		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\qactiongroup.h \
 		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\QScrollArea \
 		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\qscrollarea.h \
 		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
@@ -637,12 +651,15 @@ debug\imagepyramidui.obj: ..\ImagePyramid\imagepyramidui.cpp ../ImagePyramid/ima
 		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\QToolBar \
 		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\qtoolbar.h \
 		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\QWidget \
-		../ImagePyramid/pyramid.h \
-		C:\Qt\5.11.1\msvc2017_64\include\QtCore\QObject \
-		C:\Qt\5.11.1\msvc2017_64\include\QtCore\QStack \
-		C:\Qt\5.11.1\msvc2017_64\include\QtCore\qstack.h \
+		C:\Qt\5.11.1\msvc2017_64\include\QtCore\qmath.h \
 		C:\Qt\5.11.1\msvc2017_64\include\QtGui\QPixmap \
-		C:\Qt\5.11.1\msvc2017_64\include\QtGui\QImage
+		C:\Qt\5.11.1\msvc2017_64\include\QtGui\QImage \
+		C:\Qt\5.11.1\msvc2017_64\include\QtCore\QTextStream \
+		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\QFileDialog \
+		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\qfiledialog.h \
+		C:\Qt\5.11.1\msvc2017_64\include\QtCore\qdir.h \
+		C:\Qt\5.11.1\msvc2017_64\include\QtCore\qfileinfo.h \
+		C:\Qt\5.11.1\msvc2017_64\include\QtWidgets\qdialog.h
 
 debug\pyramid.obj: ..\ImagePyramid\pyramid.cpp ../ImagePyramid/pyramid.h \
 		C:\Qt\5.11.1\msvc2017_64\include\QtCore\QObject \

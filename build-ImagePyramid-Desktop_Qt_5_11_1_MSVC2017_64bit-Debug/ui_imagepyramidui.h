@@ -10,10 +10,12 @@
 #define UI_IMAGEPYRAMIDUI_H
 
 #include <QtCore/QVariant>
+#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QStatusBar>
@@ -25,6 +27,7 @@ QT_BEGIN_NAMESPACE
 class Ui_ImagePyramidUI
 {
 public:
+    QAction *action;
     QWidget *centralWidget;
     QLabel *label;
     QComboBox *fileName;
@@ -36,6 +39,7 @@ public:
     QWidget *scrollAreaWidgetContents;
     QLabel *lable_image;
     QMenuBar *menuBar;
+    QMenu *menuFile;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -44,6 +48,8 @@ public:
         if (ImagePyramidUI->objectName().isEmpty())
             ImagePyramidUI->setObjectName(QStringLiteral("ImagePyramidUI"));
         ImagePyramidUI->resize(379, 378);
+        action = new QAction(ImagePyramidUI);
+        action->setObjectName(QStringLiteral("action"));
         centralWidget = new QWidget(ImagePyramidUI);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         label = new QLabel(centralWidget);
@@ -53,11 +59,6 @@ public:
         font.setPointSize(10);
         label->setFont(font);
         fileName = new QComboBox(centralWidget);
-        fileName->addItem(QString());
-        fileName->addItem(QString());
-        fileName->addItem(QString());
-        fileName->addItem(QString());
-        fileName->addItem(QString());
         fileName->setObjectName(QStringLiteral("fileName"));
         fileName->setGeometry(QRect(40, 8, 111, 22));
         layerNumb = new QComboBox(centralWidget);
@@ -90,6 +91,8 @@ public:
         menuBar = new QMenuBar(ImagePyramidUI);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 379, 21));
+        menuFile = new QMenu(menuBar);
+        menuFile->setObjectName(QStringLiteral("menuFile"));
         ImagePyramidUI->setMenuBar(menuBar);
         mainToolBar = new QToolBar(ImagePyramidUI);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -97,6 +100,9 @@ public:
         statusBar = new QStatusBar(ImagePyramidUI);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         ImagePyramidUI->setStatusBar(statusBar);
+
+        menuBar->addAction(menuFile->menuAction());
+        menuFile->addAction(action);
 
         retranslateUi(ImagePyramidUI);
 
@@ -106,17 +112,13 @@ public:
     void retranslateUi(QMainWindow *ImagePyramidUI)
     {
         ImagePyramidUI->setWindowTitle(QApplication::translate("ImagePyramidUI", "ImagePyramidUI", nullptr));
+        action->setText(QApplication::translate("ImagePyramidUI", "\320\236\321\202\320\272\321\200\321\213\321\202\321\214 \320\270\320\267\320\276\320\261\321\200\320\260\320\266\320\265\320\275\320\270\320\265", nullptr));
         label->setText(QApplication::translate("ImagePyramidUI", "File:", nullptr));
-        fileName->setItemText(0, QApplication::translate("ImagePyramidUI", "\320\276\320\261\320\276\320\270Horizon.png", nullptr));
-        fileName->setItemText(1, QApplication::translate("ImagePyramidUI", "\320\276\320\261\320\276\320\270\320\242\321\200\320\270\320\272\321\203.jpg", nullptr));
-        fileName->setItemText(2, QApplication::translate("ImagePyramidUI", "\320\276\320\261\320\276\320\270\320\227\320\265\320\273\321\214\320\264\320\260.jpg", nullptr));
-        fileName->setItemText(3, QApplication::translate("ImagePyramidUI", "\320\276\320\261\320\276\320\270RE7.jpg", nullptr));
-        fileName->setItemText(4, QApplication::translate("ImagePyramidUI", "\320\276\320\261\320\276\320\270TheRoom.jpg", nullptr));
-
         label_2->setText(QApplication::translate("ImagePyramidUI", "Layer:", nullptr));
         label_3->setText(QApplication::translate("ImagePyramidUI", "Size:", nullptr));
         sizeLabel->setText(QApplication::translate("ImagePyramidUI", "?", nullptr));
         lable_image->setText(QString());
+        menuFile->setTitle(QApplication::translate("ImagePyramidUI", "File", nullptr));
     } // retranslateUi
 
 };

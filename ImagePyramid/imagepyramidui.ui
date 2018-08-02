@@ -41,31 +41,6 @@
       <height>22</height>
      </rect>
     </property>
-    <item>
-     <property name="text">
-      <string>обоиHorizon.png</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>обоиТрику.jpg</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>обоиЗельда.jpg</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>обоиRE7.jpg</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>обоиTheRoom.jpg</string>
-     </property>
-    </item>
    </widget>
    <widget class="QComboBox" name="layerNumb">
     <property name="geometry">
@@ -177,6 +152,13 @@
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="action"/>
+   </widget>
+   <addaction name="menuFile"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -187,6 +169,11 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="action">
+   <property name="text">
+    <string>Открыть изображение</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

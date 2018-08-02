@@ -2,6 +2,7 @@
 #define IMAGEPYRAMIDUI_H
 
 #include <QMainWindow>
+#include "pyramid.h"
 
 namespace Ui {
 class ImagePyramidUI;
@@ -16,12 +17,20 @@ public:
     ~ImagePyramidUI();
 
 private slots:
-    void on_fileName_currentTextChanged(const QString &arg1);
 
     void on_layerNumb_currentIndexChanged(int index);
 
+    void on_action_triggered();
+
+    void on_fileName_currentIndexChanged(int index);
+
 private:
-    Ui::ImagePyramidUI *ui;
+    Ui::ImagePyramidUI *ui;    
+    void addPictureOnForm(QPixmap);
+
+    Pyramid *pictureP;
+    QList<QPixmap> *openedPixMaps = new QList<QPixmap>;
+    bool diagIsBigger(QPixmap, QPixmap);
 };
 
 #endif // IMAGEPYRAMIDUI_H
